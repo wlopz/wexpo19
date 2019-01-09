@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
+import {Container, Header,Icon, Content, Left} from 'native-base';
+
 export class Home extends Component {
   render() {
     return (
