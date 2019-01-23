@@ -4,6 +4,7 @@ import {
   Button,
   Text,
   View,
+  ScrollView,
   Image,
   TouchableHighlight,
  
@@ -19,9 +20,9 @@ import { DrawerNavigator } from 'react-navigation';
 
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
+  // static navigationOptions = {
+  //   title: 'Home',
+  // };
   render() {
     const {navigate} = this.props.navigation;
     return (            
@@ -39,9 +40,9 @@ class HomeScreen extends React.Component {
         <View style={styles.menuContainer}>
                
         
-         <TouchableHighlight onPress={() => navigate('Workshops')}>
+         <TouchableHighlight onPress={() => navigate('Youth')}>
           <Image
-          source={require('./assets/images_wexpo19/workshops.png')}
+          source={require('./assets/images_wexpo19/youthicon.png')}
           style={{height: 120, width: 110,resizeMode:'contain'}}/>
         </TouchableHighlight>
 
@@ -70,9 +71,9 @@ class HomeScreen extends React.Component {
           style={{height: 150, width: 110,resizeMode:'contain'}}/>
         </TouchableHighlight>
 
-        <TouchableHighlight  onPress={() => navigate('Gallery')}>
+        <TouchableHighlight  onPress={() => navigate('Credit')}>
           <Image
-          source={require('./assets/images_wexpo19/Gallerybotton.png')}
+          source={require('./assets/images_wexpo19/medalla.png')}
           style={{height: 150, width: 110,resizeMode:'contain'}}/>
         </TouchableHighlight>
 
@@ -88,19 +89,20 @@ class HomeScreen extends React.Component {
 
 
 
-class WorkshopsScreen extends React.Component {
+class YouthScreen extends React.Component {
   static navigationOptions = {
-    title: 'Workshops',
+    title: 'Youth',
   };
   render() {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Workshops Screen!</Text>
-        <Button
-          title="Go to Home Page"
-          onPress={() => navigate('Home')}
-        />
+        <ScrollView>
+          <Image
+            source={require('./assets/images_wexpo19/youth_final.png')}
+            style={{height: 850, width: 375,resizeMode:'contain'}}
+            />
+        </ScrollView>
       </View>
     );
   }
@@ -114,12 +116,13 @@ class VendorsScreen extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Vendors Screen!</Text>
-        <Button
-          title="Go to Home Page"
-          onPress={() => navigate('Home')}
-        />
-      </View>
+        <ScrollView>
+          <Image
+            source={require('./assets/images_wexpo19/Vendors_final.png')}
+            style={{height: 850, width: 375,resizeMode:'contain'}}
+            />
+        </ScrollView>
+      </View>  
     );
   }
 }
@@ -132,11 +135,12 @@ class MapScreen extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Map Screen!</Text>
-        <Button
-          title="Go to Home Page"
-          onPress={() => navigate('Home')}
-        />
+        <ScrollView>
+          <Image
+            source={require('./assets/images_wexpo19/map_final.png')}
+            style={{height: 600, width: 375,resizeMode:'contain'}}
+            />
+        </ScrollView>
       </View>
     );
   }
@@ -178,15 +182,15 @@ class VipScreen extends React.Component {
   }
 }
 
-class GalleryScreen extends React.Component {
+class CreditScreen extends React.Component {
   static navigationOptions = {
-    title: 'Gallery',
+    title: 'Credit',
   };
   render() {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Gallery Screen!</Text>
+        <Text style={styles.welcome}>Credit Screen!</Text>
         <Button
           title="Go to Home Page"
           onPress={() => navigate('Home')}
@@ -202,8 +206,8 @@ const AppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
-  Workshops: {
-    screen: WorkshopsScreen
+  Youth: {
+    screen: YouthScreen
   },
   Vendors: {
     screen: VendorsScreen
@@ -217,8 +221,8 @@ const AppNavigator = createStackNavigator({
   Vip: {
     screen: VipScreen
   },
-  Gallery: {
-    screen: GalleryScreen
+  Credit: {
+    screen: CreditScreen
   }
 });
 
@@ -267,14 +271,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
 
-
-
   image: {
     width: '100%',
     height: '100%'
   },
 
- 
+  image_vendor: {
+    flex: 1,
+    alignSelf: 'stretch',
+    width: undefined,
+    height: undefined
+  },
 
   welcome: {
     fontSize: 20,
