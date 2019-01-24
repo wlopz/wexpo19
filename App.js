@@ -42,38 +42,37 @@ class HomeScreen extends React.Component {
         
          <TouchableHighlight onPress={() => navigate('Youth')}>
           <Image
-          source={require('./assets/images_wexpo19/youthicon.png')}
+          source={require('./assets/images_wexpo19/youthicon.jpg')}
           style={{height: 120, width: 110,resizeMode:'contain'}}/>
+        </TouchableHighlight>
+
+        <TouchableHighlight  onPress={() => navigate('Event')}> 
+         <Image
+          source={require('./assets/images_wexpo19/events.jpg')}
+          style={{height: 150, width: 110,resizeMode:'contain'}}/>
+        </TouchableHighlight>
+
+        <TouchableHighlight  onPress={() => navigate('Map')}>  
+          <Image
+          source={require('./assets/images_wexpo19/venuemap.jpg')}
+          style={{height: 150, width: 110,resizeMode:'contain'}}/>
         </TouchableHighlight>
 
         <TouchableHighlight  onPress={() => navigate('Vendors')}>
           <Image
-          source={require('./assets/images_wexpo19/vendors.png')}
+          source={require('./assets/images_wexpo19/vendors.jpg')}
           style={{height: 150, width: 110,resizeMode:'contain'}}/>
           </TouchableHighlight>
 
-        <TouchableHighlight  onPress={() => navigate('Map')}>  
-          <Image
-          source={require('./assets/images_wexpo19/venuemap.png')}
-          style={{height: 150, width: 110,resizeMode:'contain'}}/>
-        </TouchableHighlight>
-
         <TouchableHighlight  onPress={() => navigate('Sponsors')}>
-
          <Image
-          source={require('./assets/images_wexpo19/sponsors.png')}
-          style={{height: 150, width: 110,resizeMode:'contain'}}/>
-        </TouchableHighlight>
-
-        <TouchableHighlight  onPress={() => navigate('Vip')}> 
-         <Image
-          source={require('./assets/images_wexpo19/vip.png')}
+          source={require('./assets/images_wexpo19/sponsors.jpg')}
           style={{height: 150, width: 110,resizeMode:'contain'}}/>
         </TouchableHighlight>
 
         <TouchableHighlight  onPress={() => navigate('Credit')}>
           <Image
-          source={require('./assets/images_wexpo19/medalla.png')}
+          source={require('./assets/images_wexpo19/medalla.jpg')}
           style={{height: 150, width: 110,resizeMode:'contain'}}/>
         </TouchableHighlight>
 
@@ -108,9 +107,9 @@ class YouthScreen extends React.Component {
   }
 }
 
-class VendorsScreen extends React.Component {
+class EventScreen extends React.Component {
   static navigationOptions = {
-    title: 'Vendors',
+    title: 'Event',
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -118,11 +117,11 @@ class VendorsScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView>
           <Image
-            source={require('./assets/images_wexpo19/Vendors_final.png')}
+            source={require('./assets/images_wexpo19/Events_final.png')}
             style={{height: 850, width: 375,resizeMode:'contain'}}
             />
         </ScrollView>
-      </View>  
+      </View>
     );
   }
 }
@@ -146,6 +145,25 @@ class MapScreen extends React.Component {
   }
 }
 
+class VendorsScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Vendors',
+  };
+  render() {
+    const {navigate} = this.props.navigation;
+    return (
+      <View style={styles.container}>
+        <ScrollView>
+          <Image
+            source={require('./assets/images_wexpo19/Vendors_final.png')}
+            style={{height: 850, width: 375,resizeMode:'contain'}}
+            />
+        </ScrollView>
+      </View>  
+    );
+  }
+}
+
 class SponsorsScreen extends React.Component {
   static navigationOptions = {
     title: 'Sponsors',
@@ -154,29 +172,12 @@ class SponsorsScreen extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Sponsors Screen!</Text>
-        <Button
-          title="Go to Home Page"
-          onPress={() => navigate('Home')}
-        />
-      </View>
-    );
-  }
-}
-
-class VipScreen extends React.Component {
-  static navigationOptions = {
-    title: 'VIP',
-  };
-  render() {
-    const {navigate} = this.props.navigation;
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>VIP Screen!</Text>
-        <Button
-          title="Go to Home Page"
-          onPress={() => navigate('Home')}
-        />
+        <ScrollView>
+          <Image
+            source={require('./assets/images_wexpo19/Sponsors_final.png')}
+            style={{height: 850, width: 375,resizeMode:'contain'}}
+            />
+        </ScrollView>
       </View>
     );
   }
@@ -190,11 +191,12 @@ class CreditScreen extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Credit Screen!</Text>
-        <Button
-          title="Go to Home Page"
-          onPress={() => navigate('Home')}
-        />
+        <ScrollView>
+          <Image
+            source={require('./assets/images_wexpo19/Credits_final.png')}
+            style={{height: 300, width: 375,resizeMode:'contain'}}
+            />
+        </ScrollView>
       </View>
     );
   }
@@ -209,17 +211,17 @@ const AppNavigator = createStackNavigator({
   Youth: {
     screen: YouthScreen
   },
-  Vendors: {
-    screen: VendorsScreen
+  Event: {
+    screen: EventScreen
   },
   Map: {
     screen: MapScreen
   },
+  Vendors: {
+    screen: VendorsScreen
+  },
   Sponsors: {
     screen: SponsorsScreen
-  },
-  Vip: {
-    screen: VipScreen
   },
   Credit: {
     screen: CreditScreen
