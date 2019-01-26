@@ -20,9 +20,9 @@ import { DrawerNavigator } from 'react-navigation';
 
 
 class HomeScreen extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Home',
-  // };
+  static navigationOptions = {
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
+  };
   render() {
     const {navigate} = this.props.navigation;
     return (            
@@ -30,10 +30,14 @@ class HomeScreen extends React.Component {
         <View style={styles.overlayCotainer}>
 
         <View style={styles.top}>
-          <Image
-          source={require('./assets/images_wexpo19/logo.png')}
-          style={{height: 60, width: 115,resizeMode: 'contain'}}/>
-         </View> 
+          
+        </View>
+
+        <ScrollView>
+
+        <View>
+          <Image source={require('./assets/images_wexpo19/welcome.png')} style={{height: 150, width: '100%', paddingBottom: 0}}/>
+        </View> 
 
 
         <View style={styles.container}>
@@ -78,6 +82,7 @@ class HomeScreen extends React.Component {
 
         </View>
         </View>
+        </ScrollView>
         </View>
 
 
@@ -90,7 +95,7 @@ class HomeScreen extends React.Component {
 
 class YouthScreen extends React.Component {
   static navigationOptions = {
-    title: 'Youth',
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -98,7 +103,7 @@ class YouthScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView>
           <Image
-            source={require('./assets/images_wexpo19/youth_final.png')}
+            source={require('./assets/images_wexpo19/youthup.png')}
             style={{height: 850, width: 375,resizeMode:'contain'}}
             />
         </ScrollView>
@@ -109,7 +114,7 @@ class YouthScreen extends React.Component {
 
 class EventScreen extends React.Component {
   static navigationOptions = {
-    title: 'Event',
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -128,7 +133,7 @@ class EventScreen extends React.Component {
 
 class MapScreen extends React.Component {
   static navigationOptions = {
-    title: 'Map',
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -147,7 +152,7 @@ class MapScreen extends React.Component {
 
 class VendorsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Vendors',
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -166,7 +171,7 @@ class VendorsScreen extends React.Component {
 
 class SponsorsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Sponsors',
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -185,7 +190,7 @@ class SponsorsScreen extends React.Component {
 
 class CreditScreen extends React.Component {
   static navigationOptions = {
-    title: 'Credit',
+    headerTitle: <Image source={require('./assets/images_wexpo19/logo.png')} style={{height: 35, width: 115,resizeMode: 'contain'}}/>
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -245,12 +250,12 @@ const styles = StyleSheet.create({
   },
 
   top: {
-    height: '10%',
+    height: 0,
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
     paddingRight: 15,
-    borderBottomWidth: 8,
-    paddingBottom: 5,
+    borderBottomWidth: 10,
+    paddingBottom: 0,
     borderColor: 'rgba(174,108,165,0.4)',
   },
 
@@ -262,9 +267,9 @@ const styles = StyleSheet.create({
   // },
 
   menuContainer: {
-    padding: 30,
-    paddingRight: 25,
-    paddingLeft: 25,
+    padding: 5,
+    paddingRight: 50,
+    paddingLeft: 50,
     paddingBottom: 50,
     height:'90%',
     flexDirection: 'row',
